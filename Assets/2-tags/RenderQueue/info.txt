@@ -1,0 +1,12 @@
+渲染队列会决定渲染顺序
+Tag{"Queue"="Background"}
+Tag{"Queue"="Background+100"}
+常用渲染队列，数值越大越接近观察者
+Background    =1000
+Geometry      =2000
+AlphaTest     =2450
+Transparent   =3000
+Overlay       =4000
+
+
+demo中关闭了ztest 绿色虽然最靠后，但因为是最后渲染所以永远出现在最前

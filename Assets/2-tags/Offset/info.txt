@@ -1,0 +1,59 @@
+启用了Polygon Offset，那么到底要把立方体推远多少呢？这需要用glPolygonOffset来指定。glPolygonOffset需要2个参数：GLfloat factor 和GLfloat units。
+
+每一个Fragment的深度值都会增加如下所示的偏移量：
+
+offset = (m * factor) + (r * units)
+
+m是多边形的深度的斜率（在光栅化阶段计算得出）中的最大值。这句话难以理解，你只需知道，一个多边形越是与近裁剪面（near clipping plan）平行，m就越接近0。
+
+r是能产生在窗口坐标系的深度值中可分辨的差异的最小值，r是由具体实现OpenGL的平台指定的一个常量。
+
+一个大于0的offset 会把模型推到离你（摄像机）更远一点的位置，相应地，一个小于0的offset 会把模型拉近。
+
+如果想要非常好地使用Polygon Offset，你需要做一些数学上的研究。不过一般而言，只需把1.0和0.0这样简单的值赋给glPolygonOffset即可满足需要。
+
+我们要把立方体推远一点，所以
+
+gl.PolygonOffset(1.0f,1.0f);
+
+
+
+
+
+http://blog.csdn.net/poem_qianmo/article/details/41923661
+
+语句之四：Offset Factor ,Units
+
+此语句用两个参数（Facto和Units）来定义深度偏移。
+
+Factor参数表示 Z缩放的最大斜率的值。
+
+Units参数表示可分辨的最小深度缓冲区的值。
+
+于是，我们就可以强制使位于同一位置上的两个集合体中的一个几何体绘制在另一个的上层。
+
+例如偏移量Offset 设为0, -1（即Factor=0, Units=-1）的值使得靠近摄像机的几何体忽略几何体的斜率，
+
+而偏移量为-1,-1（即Factor =-1, Units=-1）时，
+
+则会让几何体偏移一个微小的角度，让观察使看起来更近些。
+
+
+
+
+
+补充：
+
+y=ax+b直线斜截式
+
+a是斜率，b是y轴移动的距离
+
+这里设置的Factor就是a，x是第一个参数，b是Units*第二参数
+
+没做偏移时如果y=0；
+
+那么偏移后y<0就是更近了
+
+>0更远
+
+所以设置这两个参数相当于计算直线斜截式的y值

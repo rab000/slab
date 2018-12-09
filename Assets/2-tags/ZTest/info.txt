@@ -1,0 +1,10 @@
+ZTest 可取值为：
+Greater , GEqual , Less , LEqual , Equal , NotEqual , 
+Always , Never , Off，默认是 LEqual，
+ZTest Off 等同于 ZTest Always 永远允许测试通过
+ZTest Never 永远测试不通过
+
+注意：
+1 ZWrite有两个值on和off，默认是on
+2 关于Z缓存_CameraDepthTexture看下shaderLab2关于ZTest部分的解释
+
