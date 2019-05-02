@@ -4,6 +4,20 @@ blog不稳定，为了记录学习
 每个实例最好配有自己的word说明文档
 
 
-
 渲染执行顺序
 模版测试->深度测试->片段shader逻辑->Alpha测试
+
+
+目录
+
+0_basic     基础，tags(各种开关使用)，mvp(矩阵变换)
+
+1_surface	常用surface shader
+
+2_special   各种特殊shader收集研究
+
+3_light		光照
+
+4_shadow    阴影
+
+5_optimization 移动平台优化
