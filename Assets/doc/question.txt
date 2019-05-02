@@ -2,3 +2,4 @@
 2 surface中alphatest怎么修改开关，智能判断小于某个值？
 3 关于tags的位置，目前看是SubShader和Pass中都可，如果一般Pass里不是固定管线，一般都写在了SubShader中
 4 做tex时注意下定义Proterties时还能在大括号中设置纹理的映射方式
+5 tags中renderType的具体用法
