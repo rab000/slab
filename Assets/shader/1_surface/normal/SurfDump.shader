@@ -1,7 +1,7 @@
 ﻿/*
 法线贴图
 */
-Shader "Nafio/DumpSurf" {  
+Shader "N/surface/DumpSurf" {  
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _Bump ("Bump", 2D) = "bump" {} //法线贴图
