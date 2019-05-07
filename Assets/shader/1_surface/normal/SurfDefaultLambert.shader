@@ -1,5 +1,5 @@
 ﻿
-Shader "N/surface/NDiffuse" {
+Shader "N/surface/DefaultLambert" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}//变量名_MainText，显示名Base(RGB),类型2D,默认值白色white，最后{}里面可以放一些控制参数
 	}
@@ -13,7 +13,7 @@ Shader "N/surface/NDiffuse" {
 		sampler2D _MainTex;  //定义一张2d图片（就是从属性中的_MainTex链接过来的，否则cg无法使用）
  
 		struct Input {
-			float2 uv_MainTex //取MainTex的uv
+			float2 uv_MainTex; //取MainTex的uv
 		};
  
 		void surf (Input IN, inout SurfaceOutput o) {   //IN是向表面着色器处理函数输入的函数，SurfaceOutput是向光照处理函数输出的参数
