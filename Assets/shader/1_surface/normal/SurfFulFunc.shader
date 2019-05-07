@@ -1,7 +1,7 @@
 ﻿/*
 比较完整的surfaceShader
 */
-Shader "Nafio/FullSurf" {
+Shader "N/surface/SurfFull" {
 Properties
 {
 	_MainTex("_MainTex",2D) = "white" {}
