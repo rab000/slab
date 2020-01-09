@@ -1,6 +1,10 @@
 ﻿
-//nafio info 渲染两次，沿法线方向挤出outline，最简单的outline实现
-Shader "Nafio/OutLine"
+// nafio info 渲染两次
+// 最简单的outline实现，沿法线方向挤出outline
+// 缺点1 沿法线挤出固定距离，那么同一个物体，距离屏幕远近就会表现出不同粗细的描边
+// 缺点2 当相邻面法线朝向变化剧烈时，描边会出现缝隙，比如Cube的描边
+
+Shader "NShader/special/3d/OutLine"
 {
     Properties
     {
@@ -67,7 +71,7 @@ Shader "Nafio/OutLine"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = v.texcoord;
+                o.uv = v.texcoord;				
                 return o;
             }
  
