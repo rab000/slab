@@ -1,5 +1,5 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
+﻿
+//nafio info 渲染两次，沿法线方向挤出outline，最简单的outline实现
 Shader "Nafio/OutLine"
 {
     Properties

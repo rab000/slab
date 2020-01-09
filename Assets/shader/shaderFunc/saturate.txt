@@ -1,0 +1,3 @@
+当你想将颜色值规范到0~1之间时，你可能会想到使用saturate函数（saturate(x)的作用是如果x取值小于0，
+则返回值为0。如果x取值大于1，则返回值为1。若x在0到1之间，则直接返回x的值.），
+当然saturate也可以使用变量的swizzled版本，比如saturate(somecolor.rgb);

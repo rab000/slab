@@ -10,14 +10,18 @@ blog不稳定，为了记录学习
 
 目录
 
-0_basic     基础，tags(各种开关使用)，mvp(矩阵变换)
+tags		常用标签功能行说明
 
-1_surface	常用surface shader
+mvp			各类矩阵变化，功能性说明，里面可能包含各类shader，但都是比较典型的使用mvp变化的功能
 
-2_special   各种特殊shader收集研究
+shaderFunc  积累常用函数库说明
 
-3_light		光照
+surface     surface shader功能性说明，用于说明surface shader相关标签特性的用法
 
-4_shadow    阴影
+light		灯光专题
 
-5_optimization 移动平台优化
+shadow		阴影专题
+
+shaders     各种shader收集
+
+optimization 移动平台优化
