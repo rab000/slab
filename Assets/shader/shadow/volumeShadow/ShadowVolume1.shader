@@ -8,6 +8,7 @@ Shader "NShader/shadow/ShadowVolume1" {
 		
 		pass {
 		Blend DstColor One
+		//Blend One Zero
 		Cull Back
 		ZWrite Off
 		ColorMask R 

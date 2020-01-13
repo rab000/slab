@@ -6,9 +6,13 @@ Properties {
 
 SubShader {
 		Tags { "Queue" = "Transparent+10" }
+		//先渲染正面面
 		pass {
 			Blend DstColor One
-			Cull Back ZWrite Off ColorMask R Offset 1,1
+			Cull Back
+			ZWrite Off
+			ColorMask R 
+			Offset 1,1
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -36,9 +40,14 @@ SubShader {
 			ENDCG
 		}//endpass
 	
+		//再渲染背面，正片叠底
 		pass {
 				Blend DstColor Zero
-				Cull Front ZWrite Off ColorMask R Offset 1,1
+				
+				Cull Front
+				ZWrite Off 
+				ColorMask R 
+				Offset 1,1
 				CGPROGRAM
 				#pragma vertex vert
 				#pragma fragment frag
