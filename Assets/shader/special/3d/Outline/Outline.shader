@@ -4,7 +4,7 @@
 // 缺点1 沿法线挤出固定距离，那么同一个物体，距离屏幕远近就会表现出不同粗细的描边
 // 缺点2 当相邻面法线朝向变化剧烈时，描边会出现缝隙，比如Cube的描边
 
-Shader "NShader/special/3d/OutLine"
+Shader "N/special/3d/OutLine"
 {
     Properties
     {

@@ -1,4 +1,4 @@
-Shader "NShader/shadow/ShadowVolume3" {
+Shader "N/shadow/ShadowVolume3" {
 Properties {
 	_Extrusion ("Extrusion", Range(0,30)) = 5.0
 }

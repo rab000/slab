@@ -1,5 +1,5 @@
 ﻿
-Shader "NShader/Tags/AlphaBlend/BlendDemo_SrcAlpha_OneMinusSrcAlpha" {
+Shader "N/Tags/AlphaBlend/BlendDemo_SrcAlpha_OneMinusSrcAlpha" {
 
 Properties
 {

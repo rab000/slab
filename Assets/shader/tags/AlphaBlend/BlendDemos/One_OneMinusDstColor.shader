@@ -1,5 +1,5 @@
 ﻿//正片叠底
-Shader "NShader/Tags/AlphaBlend/BlendDemo_One_OneMinusDstColor" {
+Shader "N/Tags/AlphaBlend/BlendDemo_One_OneMinusDstColor" {
 
 Properties
 {

@@ -8,7 +8,7 @@
 //具体方法为,把每个点当成向量，挤出时的方向，不直接沿法线方向挤出，而是沿着根据法线与向量方向计算出的新方向挤出
 
 //这个shader的关注点是，只沿着屏幕方向挤出模型，去掉了z方向
-Shader "NShader/mvp/3d/OutLine"
+Shader "N/mvp/3d/OutLine"
 {
 	Properties {
 		_Outline("Out line",range(0,1))=0.02

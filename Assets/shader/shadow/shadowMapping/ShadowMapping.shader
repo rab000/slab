@@ -1,7 +1,7 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
 //NINFO 这个shader直接被ShadowMapping脚本引用，用来渲染灯光空间的深度贴图
-Shader "NShader/shadow/shadowMapping" {
+Shader "N/shadow/shadowMapping" {
 	SubShader {
 	    Tags { "RenderType"="Opaque" }
 	    Pass {

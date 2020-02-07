@@ -1,4 +1,4 @@
-﻿Shader "NShader/TestColor"
+﻿Shader "N/TestColor"
 {
     Properties
     {

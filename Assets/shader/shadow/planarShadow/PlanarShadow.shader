@@ -2,7 +2,7 @@
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 //NINFO 平面阴影，这个shader主要作用是学习用，实际用处不大，注意下空间转换，注意下阴影衰减使用的方法
-Shader "NShader/shadow/PlanarShadow" {
+Shader "N/shadow/PlanarShadow" {
 	Properties{
 	_Intensity("atten",range(1,16))=1
 	}

@@ -6,7 +6,7 @@
 
 //2 当相邻面法线朝向变化剧烈时，描边会出现缝隙，比如Cube的描边
 //具体方法为,把每个点当成向量，挤出时的方向，不直接沿法线方向挤出，而是沿着根据法线与向量方向计算出的新方向挤出
-Shader "NShader/special/3d/OutLine2"
+Shader "N/special/3d/OutLine2"
 {
 	Properties {
 		_Outline("Out line",range(0,1))=0.02

@@ -3,7 +3,7 @@
 //这个shader用的是一维贴图的方法，就是从贴图中取光照颜色，这种从1维贴图中取颜色的方式比较粗暴，
 //这里只做学习用,后面会有更高级的方式
 
-Shader "Tut/Shader/Toon/Cel_2" {
+Shader "N/Toon/Cel_2" {
 	Properties {
 		_ToonMap("Map to Toon",2D)="white"{}
 		_Color("Main Color",color)=(1,1,1,1)
