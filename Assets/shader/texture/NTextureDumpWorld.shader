@@ -80,13 +80,17 @@ Shader "N/texture/NTextureDumpWorld"
 
 				//把切空间法线转到世界空间
 				//dot(i.TangentToWorld0.xyz, bump)的解释
-				//首先i.TangentToWorld0.xyz就是切空间x轴
-				//i.TangentToWorld0.xyz是世界坐标的x轴就合理了，bump分别向xyz轴投影
-				//经过画图确实是x轴，这个明天复习下旋转矩阵应该就可以了，旋转矩阵的构造
+				//这段代码看不懂，看不懂，也许除了用矩阵转换，通过这种dot的方法也能得到转换后的世界空间向量
+
+				// 将法线方向从切线空间 变换 到世界空间
+                // 矩阵的乘法如下(行列相乘相加)：
+                // Tx,Bx,Nx   Px   Tx*Px + Bx*Py + Nx*Pz
+                // Ty,By,Ny * Py = Ty*Px + By*Py + Ny*Pz
+                // Tz,Bz,Nz   Pz   Tz*Px + Bz*Py + Nz*Pz
+				// 比较下下面写法，跟直接乘矩阵是一致的，可以当结论使用，主要是当矩阵是按多个向量传入的时候
 				bump = normalize(half3(dot(i.TangentToWorld0.xyz, bump), dot(i.TangentToWorld1.xyz, bump), dot(i.TangentToWorld2.xyz, bump)));
 				
 				
-
 				fixed3 albedo = tex2D(_MainTex, i.uv).rgb * _Color.rgb;
 				
 				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
