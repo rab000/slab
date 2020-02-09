@@ -1,4 +1,4 @@
-﻿//逐像素着色
+﻿//逐像素着色(Phong着色)
 Shader "N/Light/NLightPhongShading"
 {
     Properties

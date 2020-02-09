@@ -1,6 +1,5 @@
 ﻿
 //逐顶点着色(高洛德着色)
-
 Shader "N/Light/NLightGouraudShading"
 {
     Properties

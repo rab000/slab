@@ -80,8 +80,6 @@ Shader "N/texture/NTextureDumpWorld"
 
 				//把切空间法线转到世界空间
 				//dot(i.TangentToWorld0.xyz, bump)的解释
-				//这段代码看不懂，看不懂，也许除了用矩阵转换，通过这种dot的方法也能得到转换后的世界空间向量
-
 				// 将法线方向从切线空间 变换 到世界空间
                 // 矩阵的乘法如下(行列相乘相加)：
                 // Tx,Bx,Nx   Px   Tx*Px + Bx*Py + Nx*Pz
