@@ -2,6 +2,11 @@
 //其实并不完整，没包括forwardBase中没包括4个顶点光和sh函数的计算等
 //里面计算光衰减和阴影用了unity内置函数
 //这里forwardAdd与forwardBase主要区别是去掉了环境光，如果有自发光，4个顶点光，sh函数计算也在forwardBase中做
+
+//使用阴影的注意事项
+//a2f中的顶点坐标名称必须是vertex
+//v2f中的位置变量名称必须是pos
+//因为内置阴影计算要用
 Shader "N/Light/NLightFullForward"
 {
     Properties {
@@ -55,7 +60,8 @@ Shader "N/Light/NLightFullForward"
 				float4 TtoW0 : TEXCOORD1;  
                 float4 TtoW1 : TEXCOORD2;  
                 float4 TtoW2 : TEXCOORD3; 
-				//使用内置阴影计算1/3
+				//使用内置阴影计算1/3,生命一个名为_ShadowCoord的阴影纹理坐标变量
+				//注意这里4代表TEXCOORD4，如果是2就是TEXCOORD2
 				SHADOW_COORDS(4)
 			};
 			
@@ -75,7 +81,8 @@ Shader "N/Light/NLightFullForward"
                 o.TtoW1 = float4(worldTangent.y, worldBinormal.y, worldNormal.y, worldPos.y);  
                 o.TtoW2 = float4(worldTangent.z, worldBinormal.z, worldNormal.z, worldPos.z);  
 
-  				//使用内置阴影计算2/3
+  				//使用内置阴影计算2/3，调用内置ComputeScreenPos函数计算_ShadowCoord
+				//unity使用的是屏幕空间阴影映射，如果特定平台不支持，就会使用传统阴影映射方式
   				TRANSFER_SHADOW(o);
 			 	
 			 	return o;
@@ -107,7 +114,7 @@ Shader "N/Light/NLightFullForward"
 			 	fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(max(0, dot(bump, halfDir)), _Gloss);
 			
 				//使用内置阴影计算3/3
-				//这句也会帮助
+				//使用_ShadowCoord对相关纹理进行采样，同时这句也会把衰减计算好
 				UNITY_LIGHT_ATTENUATION(atten, i, worldPos);
 
 				return fixed4(ambient + (diffuse + specular) * atten, 1.0);
