@@ -1,0 +1,11 @@
+ShaderLabToon的两个跟实际效果有出入估计是unity版本变化引起的，具体原因还没查
+
+NRPToon的效果，这里没法表现，因为没用崩3中真实的lightMap
+https://blog.csdn.net/qq_28580731/article/details/79891249?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+https://blog.csdn.net/liumazi/article/details/78858811?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+要有类似的两张贴图才能使用
+
+这里倒是有贴图，但是跟自己的模型对应不起来，uv需要重新整理
+https://blog.csdn.net/u010333737/article/details/82287853?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+
+工程Assets/res/model/nrp/中，目前看是效果最好的demo

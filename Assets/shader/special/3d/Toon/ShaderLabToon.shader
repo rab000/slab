@@ -2,7 +2,7 @@
 //卡通着色原理就是在漫反射基础上，将连续的光照离散化
 //这个shader用的是公式的方法 float toon=floor(diff*_Steps)/_Steps;
 
-Shader "N/Toon/Cel_1" {
+Shader "N/special/3d/ShaderLabToon" {
 	Properties {
 		_Color("Main Color",color)=(1,1,1,1)
 		_Outline("Thick of Outline",range(0,0.1))=0.02//描边宽度
