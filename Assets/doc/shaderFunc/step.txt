@@ -1,0 +1,1 @@
+step	step(a, x)	Returns (x >= a) ? 1 : 0
