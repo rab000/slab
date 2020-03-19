@@ -1,4 +1,5 @@
-﻿Shader "N/GrabPass"
+﻿//来自官网的GrabPass demo 从效果上看，不知道在表达什么
+Shader "N/GrabPass"
 {
     SubShader
     {
@@ -41,7 +42,9 @@
             half4 frag(v2f i) : SV_Target
             {
                 half4 bgcolor = tex2Dproj(_BackgroundTexture, i.grabPos);
-                return bgcolor;
+
+				//NINFO 这里注意，如果直接写bgcolor，那么得到的效果跟背景完全融合一体
+                return 1-bgcolor;
             }
             ENDCG
         }

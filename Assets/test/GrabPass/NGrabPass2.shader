@@ -1,5 +1,6 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
+//来自风雨冲
+//与官网效果不同的是，这里抓的真的是整个屏幕，然后把整个屏幕的图像直接显示出来
 Shader "N/NGrabPass2"
 {
      Properties {
