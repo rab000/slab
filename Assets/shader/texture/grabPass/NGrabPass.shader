@@ -1,5 +1,5 @@
 ﻿//来自官网的GrabPass demo 从效果上看，不知道在表达什么
-Shader "N/GrabPass"
+Shader "N/texture/grabPass/GrabPass"
 {
     SubShader
     {
