@@ -1,4 +1,7 @@
-﻿Shader "N/texture/water/NWater"
+﻿//NINFO 简单水，这个shader有两个问题，不能实用，学习用
+//反射用到了cubeMap，以后要用其他方法替换
+//折射模拟用到了grabpass，这个性能没法在移动设备上用
+Shader "N/texture/water/NWater"
 {
     Properties {
 		_Color ("Main Color", Color) = (0, 0.15, 0.115, 1)
