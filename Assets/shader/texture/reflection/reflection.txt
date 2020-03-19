@@ -1,0 +1,6 @@
+注意cubeMap已经被unity标识为lecacy，后面研究下替代方案，这里学习下反射方法
+
+cubeMap需要使用Assets/shader/reflection/Editor/RenderCubemapWizard来生成
+
+对应编辑器位置在NTools/Render into Cubemap,点击打开生成cubeMap窗口
+

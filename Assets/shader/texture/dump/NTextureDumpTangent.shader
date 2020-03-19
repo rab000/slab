@@ -4,7 +4,7 @@
 //1 是相对具体点得坐标系，方便做动画(比如物体表面整体朝z轴方向波动)
 //2 法线贴图可以压缩成只有x,y坐标，省体积
 //3 省计算量，可以在vert中直接把光方向，观察者方向计算好，传入frag后取出法线图值就能直接计算
-Shader "N/texture/NTextureDumpTangent"
+Shader "N/texture/dump/NTextureDumpTangent"
 {
     Properties
     {

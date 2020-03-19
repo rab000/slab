@@ -1,7 +1,7 @@
 ﻿
 //不在vert中计算切空间的lightDir viewDir
 //而是在frag中把从法线贴图中得到的法线转到世界坐标再进行光照等计算
-Shader "N/texture/NTextureDumpWorld"
+Shader "N/texture/dump/NTextureDumpWorld"
 {
     Properties {
 		_Color ("Color Tint", Color) = (1, 1, 1, 1)
