@@ -75,6 +75,7 @@ Shader "N/texture/reflection/NReflection"
 				fixed3 diffuse = _LightColor0.rgb * _Color.rgb * max(0, dot(worldNormal, worldLightDir));
 				
 				//环境光反射:输入视方向的反射方向，从环境贴图cubeMap采样
+				//注意一点，对cubeMap的采样只需要方向，不需要归一化向量
 				// Use the reflect dir in world space to access the cubemap
 				fixed3 reflection = texCUBE(_Cubemap, i.worldRefl).rgb * _ReflectColor.rgb;
 				
