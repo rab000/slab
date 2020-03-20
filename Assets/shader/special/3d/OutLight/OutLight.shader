@@ -2,7 +2,7 @@
 
 //自发光
     
-    Shader "Nafio/OutLight" {  
+    Shader "N/special/3d/OutLight" {  
         Properties {  
             _MainTex ("Base (RGB)", 2D) = "white" {}  
             _Color ("Main Color", Color) = (1,1,1,1)  
