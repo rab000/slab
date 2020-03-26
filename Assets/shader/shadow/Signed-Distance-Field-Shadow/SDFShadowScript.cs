@@ -51,6 +51,7 @@ public class SDFShadowScript : MonoBehaviour
 	[ImageEffectOpaque]
 	private void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
+        
 		if(!EffectMat)
 		{
 			Graphics.Blit(source, destination);
