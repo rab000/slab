@@ -1,4 +1,7 @@
 ﻿//王者荣耀平面阴影，适合移动端平面地形
+//这个shader问题
+//1 只适用与平面
+//2 阴影边缘只做了透明，但是没有虚化，不够真实
 Shader "N/shadow/PlanarShadow4Game"
 {
     Properties
