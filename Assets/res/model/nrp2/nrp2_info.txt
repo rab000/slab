@@ -1,0 +1,2 @@
+nrp2_body_alpha是未合并到nrp2_body中的a通道、
+nrp2_hair_alpha是未合并到nrp2_hair中的a通道
