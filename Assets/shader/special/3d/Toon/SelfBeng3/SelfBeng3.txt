@@ -1,0 +1,35 @@
+模拟的beng3
+
+SnapDragon Profiler 抓帧软件
+GD Ripper V2模型提取软件
+
+
+主要参考文章
+崩3基础版本（抓帧分析，比较客观，无shader）
+https://blog.csdn.net/liumazi/article/details/78858811?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+
+其他崩3文章
+
+研究崩坏3人物渲染，(有shader，shader效果不好)
+https://blog.csdn.net/qq_28580731/article/details/79891249?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+
+NPR——卡通渲染（一）
+https://blog.csdn.net/jvandc/article/details/81171250#comments
+NPR——卡通渲染（二）（崩3抓帧研究）
+https://blog.csdn.net/jvandc/article/details/81335736
+卡通渲染技巧(三)——崩坏3卡通渲染实践
+https://blog.csdn.net/u010333737/article/details/82287853
+
+崩坏三人物渲染分析
+https://blog.csdn.net/LIANGJINGLONG/article/details/78056157?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+
+崩3全屏泛光
+https://blog.csdn.net/SnoopyNa2Co3/article/details/88075047
+
+
+----------------------------------------------------------------------------------
+
+卡通渲染文章
+
+卡通渲染及其相关技术总结
+https://blog.uwa4d.com/archives/usparkle_cartoonshading.html
