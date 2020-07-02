@@ -1,0 +1,26 @@
+
+------------------------------------------------------
+查看主shader
+EnStars_Chara_Default, 法线主要Shader在Source/Chara_Main.cg中
+Chara_Main,最后包含了Chara_FragmentShaderEntryPoint.cginc，后者包括frag
+Chara_FragmentShaderEntryPoint.frag 调用了Chara_Main.ComputeMainColor 计算各类光照
+Chara_Main.ComputeMainColor调用了Chara_SurfaceProperties 计算表面参数(主要来自各种贴图)
+进而计算光照
+
+------------------------------------------------------
+查找直接放模型不显示问题
+现在有两条线
+1 直接从shader断点反推具体位置
+2 从场景中扫描找具体位置
+发现问题
+Chara_Fragment中_CharaShaderMaxBrightness.xxx缺值
+Chara_Fragment中ComputeMainColor返回值也有问题
+进一步发现ComputeMainColor中ApplyKeyLightColor(outputColor);返回值有问题
+进一步Chara_Light.cginc中float3 GetKeyLightColor() { return _DirectionalLightColor1.rgb; }猜测这个值有问题
+查找哪里设置了_DirectionalLightColor1.rgb
+发现是CharaLighting.cs
+
+结论:
+1需要在模型上挂CharaLighting.cs设置灯光
+2需要另外，需要单起节点挂UnityLightToShaderController组件才能显示出角色
+-------------------------------------------------------------
