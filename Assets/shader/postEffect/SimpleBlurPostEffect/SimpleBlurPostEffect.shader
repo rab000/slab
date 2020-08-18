@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "N/SimpleBlurPostEffect"
+Shader "N/post/SimpleBlurPostEffect"
 {
     Properties
     {
@@ -10,6 +10,7 @@ Shader "N/SimpleBlurPostEffect"
     {
         Pass
         {
+            //nafio info 注意下后处理这几个开关的处理
             ZTest Always
             Cull Off
             ZWrite Off
@@ -38,7 +39,12 @@ Shader "N/SimpleBlurPostEffect"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            //nafio info 像素大小  Vector4(1 / width, 1 / height, width, height)
+            // 1/width 这种格式的意义是方便计算uv，
+            // 比如第一个像素uv就是      1 / width,            1 / height
+            // 最后一个就是          width / width,       height / height
             float4 _MainTex_TexelSize;
+
             float _BlurRadius;
 
             v2f vert(appdata v)
@@ -61,7 +67,7 @@ Shader "N/SimpleBlurPostEffect"
                 col += tex2D(_MainTex, i.uv2);
                 col += tex2D(_MainTex, i.uv3);
                 col += tex2D(_MainTex, i.uv4);
-                col *= 0.2;
+                col *= 0.2;//因为采样5次求平均值，所以这里*0.2
 
                 return col;
             }

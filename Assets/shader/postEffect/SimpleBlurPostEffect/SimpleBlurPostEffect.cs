@@ -19,28 +19,30 @@ public class SimpleBlurPostEffect : MonoBehaviour
 
     public void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
-        if (_Material)
+        if (null == _Material) return;
+
+        //nafio info 创建两张图，长宽是原图一半
+        RenderTexture rt1 = RenderTexture.GetTemporary(src.width >> downSample, src.height >> downSample, 0, src.format);
+
+        RenderTexture rt2 = RenderTexture.GetTemporary(src.width >> downSample, src.height >> downSample, 0, src.format);
+
+        _Material.SetFloat("_BlurRadius", _BlurRadius);
+
+        Graphics.Blit(src, rt1, _Material);
+
+        for (int i = 0; i < iteration; i++)
         {
-            RenderTexture rt1 = RenderTexture.GetTemporary(src.width >> downSample, src.height >> downSample, 0, src.format);
-            RenderTexture rt2 = RenderTexture.GetTemporary(src.width >> downSample, src.height >> downSample, 0, src.format);
-
-            _Material.SetFloat("_BlurRadius", _BlurRadius);
-
-            Graphics.Blit(src, rt1, _Material);
-
-            for (int i = 0; i < iteration; i++)
-            {
-                Graphics.Blit(rt1, rt2, _Material);
-                Graphics.Blit(rt2, rt1, _Material);
-            }
-
-            Graphics.Blit(rt1, dst, _Material);
-
-            RenderTexture.ReleaseTemporary(rt1);
-
-            RenderTexture.ReleaseTemporary(rt2);
-
+            Graphics.Blit(rt1, rt2, _Material);
+            Graphics.Blit(rt2, rt1, _Material);
         }
+
+        Graphics.Blit(rt1, dst, _Material);
+
+        RenderTexture.ReleaseTemporary(rt1);
+
+        RenderTexture.ReleaseTemporary(rt2);
+
+
     }
 
 }

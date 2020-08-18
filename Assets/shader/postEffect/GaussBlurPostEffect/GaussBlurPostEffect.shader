@@ -72,6 +72,7 @@ Shader "N/GaussBlurPostEffect"
 
         ENDCG
 
+        //nafio info 注意下后处理这几个开关的处理
         ZTest Always
         Cull Off
         ZWrite Off
