@@ -11,6 +11,8 @@ https://github.com/keijiro/KinoBloom
 
 dof
 https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/
+中文翻译版本，语法比较差
+https://ak-techartist.github.io/2018/04/25/depth-of-field/
 
 
 一些渲染相关
