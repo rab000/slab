@@ -39,8 +39,8 @@ Shader "N/post/SimpleBlurPostEffect"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            //nafio info 像素大小  Vector4(1 / width, 1 / height, width, height)
-            // 1/width 这种格式的意义是方便计算uv，
+            //nafio info (相对与原始Texture)1像素大小  Vector4(1 / width, 1 / height, width, height)
+            //1/width 这种格式的意义是方便计算uv，简单说就是1像素的uv            
             // 比如第一个像素uv就是      1 / width,            1 / height
             // 最后一个就是          width / width,       height / height
             float4 _MainTex_TexelSize;
